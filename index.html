@@ -1,1 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>A Magical Aura | Event Decoration & Planning</title>
+
+  <meta name="description"
+        content="A Magical Aura - Beautiful event decoration and professional event planning for memorable celebrations.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #2b1830;
+      background: #fffafc;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,250,252,0.96);
+      border-bottom: 1px solid #ead7e0;
+      padding: 16px 7%;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #8b3567;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #777;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #3a2635;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #a04478;
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 7%;
+      background:
+        linear-gradient(rgba(58,20,48,.62), rgba(58,20,48,.62)),
+        radial-gradient(circle at center, #e8b9cf, #6b2b55);
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 78px);
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 26px;
+      border-radius: 30px;
+      background: white;
+      color: #8b3567;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 6px;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn.dark {
+      background: #8b3567;
+      color: white;
+    }
+
+    section {
+      padding: 80px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: #702650;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #777;
+    }
+
+    .about {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .services {
+      background: #fff;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      padding: 32px 24px;
+      border-radius: 18px;
+      background: #fffafc;
+      border: 1px solid #ecd9e3;
+      text-align: center;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 12px 30px rgba(90,30,65,.12);
+    }
+
+    .icon {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #7c2d58;
+      margin-bottom: 10px;
+    }
+
+    .why {
+      background: #f7edf2;
+    }
+
+    .why-list {
+      max-width: 850px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .why-item {
+      background: white;
+      padding: 20px;
+      border-radius: 14px;
+      border-left: 5px solid #a04478;
+    }
+
+    .contact {
+      text-align: center;
+      background: #3d1934;
+      color: white;
+    }
+
+    .contact h2 {
+      color: white;
+    }
+
+    .contact p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #24101f;
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    .social {
+      margin-top: 20px;
+    }
+
+    .social a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 800px) {
+      nav ul {
+        display: none;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .why-list {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">
+        A Magical Aura
+        <span>Events • Decoration • Planning</span>
+      </div>
+
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>A Magical Aura</h1>
+
+      <p>
+        Turning your special moments into beautiful,
+        unforgettable memories.
+      </p>
+
+      <a class="btn" href="#services">Explore Services</a>
+      <a class="btn dark" href="#contact">Plan Your Event</a>
+    </div>
+  </section>
+
+
+  <section id="about">
+    <div class="section-title">
+      <h2>About A Magical Aura</h2>
+      <p>Creating celebrations with creativity, elegance and care.</p>
+    </div>
+
+    <div class="about">
+      <p>
+        A Magical Aura is an event decoration and planning brand
+        dedicated to making every celebration special. From beautiful
+        decorations to thoughtful event planning, we focus on creating
+        an atmosphere that feels unique to every occasion.
+      </p>
+    </div>
+  </section>
+
+
+  <section class="services" id="services">
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Everything you need to make your event memorable.</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">✨</div>
+        <h3>Event Decoration</h3>
+        <p>
+          Beautiful and creative decoration concepts
+          designed around your celebration.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎉</div>
+        <h3>Event Planning</h3>
+        <p>
+          Thoughtful planning and coordination to help
+          your special day run smoothly.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💐</div>
+        <h3>Theme & Styling</h3>
+        <p>
+          Elegant themes, colours and styling ideas
+          to give your event its own personality.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎂</div>
+        <h3>Birthday Celebrations</h3>
+        <p>
+          Make birthdays extra special with memorable
+          decorations and creative setups.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💍</div>
+        <h3>Wedding Events</h3>
+        <p>
+          Beautiful wedding environments designed
+          for your most precious moments.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🥂</div>
+        <h3>Special Occasions</h3>
+        <p>
+          Celebrate anniversaries, parties and other
+          important moments in style.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="why">
+    <div class="section-title">
+      <h2>Why Choose Us?</h2>
+      <p>Because your celebration deserves a magical touch.</p>
+    </div>
+
+    <div class="why-list">
+
+      <div class="why-item">
+        <strong>✨ Creative Ideas</strong><br>
+        Unique concepts designed to make your event stand out.
+      </div>
+
+      <div class="why-item">
+        <strong>💎 Elegant Styling</strong><br>
+        Beautiful details that create an unforgettable atmosphere.
+      </div>
+
+      <div class="why-item">
+        <strong>🤝 Personal Attention</strong><br>
+        We listen to your ideas and understand your vision.
+      </div>
+
+      <div class="why-item">
+        <strong>🎯 Event Focused</strong><br>
+        Careful planning so you can enjoy your special day.
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="contact" id="contact">
+    <div class="section-title">
+      <h2>Let's Create Something Magical</h2>
+      <p>
+        Tell us about your event and let's turn your idea
+        into a beautiful celebration.
+      </p>
+    </div>
+
+    <!-- We will add your real WhatsApp / phone / Instagram here later -->
+
+    <a class="btn" href="https://instagram.com/" target="_blank">
+      Instagram
+    </a>
+
+    <a class="btn" href="mailto:your@email.com">
+      Email Us
+    </a>
+
+    <div class="social">
+      <a href="#home">Back to Top ↑</a>
+    </div>
+  </section>
+
+
+  <footer>
+    © 2026 A Magical Aura. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
